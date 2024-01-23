@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form{
+   /* border: 1px solid black;  */
+   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.13);
+   padding: 2rem;
+   border-radius: 10px;
+   width: 19%;
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+.label-block{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.input-text{
+    padding: .5rem 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid rgb(33, 33, 33);
+    width: 85%;
+}
+.btns-container{
+    margin-top: 2rem;
+    text-align: center;
+}
+.btn{
+    background-color: dodgerblue;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    margin-right: 0.6rem;
+    border: none;
+}
+.checkbox-container, .radio-container{
+    display: inline-block;
+    margin-right: 1rem;
+}
