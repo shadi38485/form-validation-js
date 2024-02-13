@@ -22,6 +22,7 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
     'input[name="skills"]:checked'
   );
   const roleSelect = document.querySelector("#role");
+  const messageTextarea = document.querySelector("#message");
 
   const firstNameError = document.querySelector(".firstName-error");
   const lastNameError = document.querySelector(".lastName-error");
@@ -29,6 +30,7 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
   const degreeError = document.querySelector(".degree-error");
   const skillsError = document.querySelector(".skills-error");
   const roleError = document.querySelector(".role-error");
+  const messageError = document.querySelector(".message-error");
 
   const nameRegex1 = /^[a-zA-Z]+$/;
   const nameRegex2 = new RegExp(/^[a-zA-Z]+$/);
@@ -96,6 +98,15 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
     roleError.innerText = "";
     roleSelect.style.border = "1px solid rgb(33, 33, 33)";
   }
+
+  if (messageTextarea.value == "") {
+    messageError.innerText = "message is required";
+    messageTextarea.style.border = "1px solid red";
+  } else {
+    messageError.innerText = "";
+    messageTextarea.style.border = "1px solid rgb(33, 33, 33)";
+  }
+
   const formData = {
     firstName: firstNameInput.value,
     lastName: lastNameInput.value,
@@ -103,6 +114,7 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
     degree: degreeInput.value,
     skills: skills,
     role: roleSelect.value,
+    message:messageTextarea.value
   };
   console.log(formData);
 });
