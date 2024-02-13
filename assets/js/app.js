@@ -18,11 +18,15 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
   const lastNameInput = document.querySelector("#lastName");
   const emailInput = document.querySelector("#email");
   const degreeInput = document.querySelector('input[name="degree"]:checked');
+  const skillsInputs = document.querySelectorAll(
+    'input[name="skills"]:checked'
+  );
 
   const firstNameError = document.querySelector(".firstName-error");
   const lastNameError = document.querySelector(".lastName-error");
   const emailError = document.querySelector(".email-error");
   const degreeError = document.querySelector(".degree-error");
+  const skillsError = document.querySelector(".skills-error");
 
   const nameRegex1 = /^[a-zA-Z]+$/;
   const nameRegex2 = new RegExp(/^[a-zA-Z]+$/);
@@ -56,13 +60,41 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
     degreeError.innerText = "";
   }
 
-  const formData = {
-    firstName: firstNameInput.value,
-    lastName: lastNameInput.value,
-    email: emailInput.value,
-    degree: degreeInput.value,
-  };
-  console.log(formData);
+  if (skillsInputs.length == 0) {
+    skillsError.innerText = "Select at least a skills";
+  } else {
+    skillsError.innerText = "";
+  }
+
+  let skills = [];
+  skillsInputs.forEach((item) => {
+    skills.push(item.value);
+  });
+
+  //  for (let i = 0; i < array.length; i++) {
+  //   const element = array[i];
+  //  }
+  // products.forEach((product)=>{
+  //   console.log(product.price);
+  // })
+  // products.map((product)=>{
+  //   console.log(product.price);
+  // })
+  // products.find((product)=>{
+  //   console.log(product.price);
+  // })
+  // products.filter((product)=>{
+  //   console.log(product.price);
+  // })
+
+  // const formData = {
+  //   firstName: firstNameInput.value,
+  //   lastName: lastNameInput.value,
+  //   email: emailInput.value,
+  //   degree: degreeInput.value,
+  //   skills: skills,
+  // };
+  // console.log(formData);
 });
 
 /////regular expressions   ---> regEx
