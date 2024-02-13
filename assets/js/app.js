@@ -21,12 +21,14 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
   const skillsInputs = document.querySelectorAll(
     'input[name="skills"]:checked'
   );
+  const roleSelect = document.querySelector("#role");
 
   const firstNameError = document.querySelector(".firstName-error");
   const lastNameError = document.querySelector(".lastName-error");
   const emailError = document.querySelector(".email-error");
   const degreeError = document.querySelector(".degree-error");
   const skillsError = document.querySelector(".skills-error");
+  const roleError = document.querySelector(".role-error");
 
   const nameRegex1 = /^[a-zA-Z]+$/;
   const nameRegex2 = new RegExp(/^[a-zA-Z]+$/);
@@ -87,14 +89,22 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
   //   console.log(product.price);
   // })
 
-  // const formData = {
-  //   firstName: firstNameInput.value,
-  //   lastName: lastNameInput.value,
-  //   email: emailInput.value,
-  //   degree: degreeInput.value,
-  //   skills: skills,
-  // };
-  // console.log(formData);
+  if (roleSelect.value == 0) {
+    roleError.innerText = "Select a role!";
+    roleSelect.style.border = "1px solid red";
+  } else {
+    roleError.innerText = "";
+    roleSelect.style.border = "1px solid rgb(33, 33, 33)";
+  }
+  const formData = {
+    firstName: firstNameInput.value,
+    lastName: lastNameInput.value,
+    email: emailInput.value,
+    degree: degreeInput.value,
+    skills: skills,
+    role: roleSelect.value,
+  };
+  console.log(formData);
 });
 
 /////regular expressions   ---> regEx
