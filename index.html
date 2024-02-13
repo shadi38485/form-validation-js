@@ -8,7 +8,8 @@
   </head>
   <body>
     <div class="container">
-      <form action="" class="form">
+      <!-- input , button , select , textarea -->
+      <form class="form">
         <h3>Sign Up Form</h3>
         <div class="form-group">
           <label for="firstName" class="label-block">First Name</label>
@@ -17,15 +18,31 @@
             id="firstName"
             placeholder="First Name"
             class="input-text"
+            name="firstName"
           />
+          <div class="firstName-error error"></div>
         </div>
         <div class="form-group">
           <label for="" class="label-block">Last Name</label>
-          <input type="text" id="" placeholder="Last Name" class="input-text" />
+          <input
+            type="text"
+            id="lastName"
+            placeholder="Last Name"
+            class="input-text"
+            name="lastName"
+          />
+          <div class="lastName-error error"></div>
         </div>
         <div class="form-group">
           <label for="" class="label-block">Email</label>
-          <input type="email" id="" placeholder="Email" class="input-text" />
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            class="input-text"
+            name="email"
+          />
+          <div class="email-error error"></div>
         </div>
         <div class="form-group">
           <label for="" class="label-block">Password</label>
@@ -34,6 +51,7 @@
             id=""
             placeholder="Password"
             class="input-text"
+            name="password"
           />
         </div>
 
@@ -41,17 +59,17 @@
           <label for="" class="label-block">Skills</label>
 
           <div class="checkbox-container">
-            <input type="checkbox" id="" />
+            <input type="checkbox" id="" name="Skills-html" />
             <label for="">Html</label>
           </div>
 
           <div class="checkbox-container">
-            <input type="checkbox" id="" />
+            <input type="checkbox" id="" name="Skills-css" />
             <label for="">Css</label>
           </div>
 
           <div class="checkbox-container">
-            <input type="checkbox" id="" />
+            <input type="checkbox" id="" name="Skills-js" />
             <label for="">Js</label>
           </div>
         </div>
@@ -60,24 +78,27 @@
           <label for="" class="label-block">Degree</label>
 
           <div class="radio-container">
-            <input type="radio" id="" />
+            <input type="radio" id="" name="degree" value="Bachler" />
             <label for="">Bachler</label>
           </div>
 
           <div class="radio-container">
-            <input type="radio" id="" />
+            <input type="radio" id="" name="degree" value="Master"/>
             <label for="">Master</label>
           </div>
 
           <div class="radio-container">
-            <input type="radio" id="" />
+            <input type="radio" id="" name="degree" value="PHD" />
             <label for="">PHD</label>
           </div>
+
+            <div class="degree-error error"></div>
         </div>
 
         <div class="btns-container">
           <button class="btn">Clear</button>
-          <button class="btn">Sign Up</button>
+          <!-- <input class="btn" type="submit" value="Sign Up"> -->
+          <button class="btn" type="submit" id="submit-btn">Sign Up</button>
         </div>
       </form>
     </div>
